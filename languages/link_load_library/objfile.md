@@ -146,7 +146,7 @@ C++ 编译器会将在 extern "C" 中的代码当作 C 语言代码来处理
 
 
 
-当我们的 C 语言程序包含 string.h 的时候，并且用到 memset 函数，编译器会将 memset 符号引用正确处理；但是在 C++ 语言中，编译器会认为这个 memset 函数是一个 C++ 函数，将 memset 的符号修饰成 _Z6memsetPvii，这样链接器就无法与 C 语言中的 memset 符号进行链接。可以使用 C++ 宏 `__cplusplus` 解决这个问题，C++ 编译i器会在编译 C++ 程序的时候默认定义这个宏：
+当我们的 C 语言程序包含 string.h 的时候，并且用到 memset 函数，编译器会将 memset 符号引用正确处理；但是在 C++ 语言中，编译器会认为这个 memset 函数是一个 C++ 函数，将 memset 的符号修饰成 _Z6memsetPvii，这样链接器就无法与 C 语言中的 memset 符号进行链接。可以使用 C++ 宏 `__cplusplus` 解决这个问题，C++ 编译器会在编译 C++ 程序的时候默认定义这个宏：
 
 ```cpp
 #ifdef __cplusplus
