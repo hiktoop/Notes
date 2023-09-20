@@ -13,7 +13,7 @@
 
 ## 目标文件是什么样的
 
-![](../../iamge/link_load_library/Screenshot%20from%202023-09-20%2021-48-42.png)
+![pic](../../iamge/link_load_library/Screenshot%20from%202023-09-20%2021-48-42.png)
 
 为什么把代码段和数据段分开？
 
