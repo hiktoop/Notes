@@ -13,7 +13,7 @@
 
 ## 目标文件是什么样的
 
-![](../../iamge/link_load_library/Screenshot%20from%202023-09-20%2021-48-42.png)
+![pic](../../iamge/link_load_library/Screenshot%20from%202023-09-20%2021-48-42.png)
 
 为什么把代码段和数据段分开？
 
@@ -142,7 +142,13 @@ typedef struct {
 
 C++ 编译器会将在 extern "C" 中的代码当作 C 语言代码来处理
 
+<<<<<<< HEAD
 当我们的 C 语言程序包含 string.h 的时候，并且用到 memset 函数，编译器会将 memset 符号引用正确处理；但是在 C++ 语言中，编译器会认为这个 memset 函数是一个 C++ 函数，将 memset 的符号修饰成 _Z6memsetPvii，这样链接器就无法与 C 语言中的 memset 符号进行链接。可以使用 C++ 宏 `__cplusplus` 解决这个问题，C++ 编译i器会在编译 C++ 程序的时候默认定义这个宏：
+=======
+
+
+当我们的 C 语言程序包含 string.h 的时候，并且用到 memset 函数，编译器会将 memset 符号引用正确处理；但是在 C++ 语言中，编译器会认为这个 memset 函数是一个 C++ 函数，将 memset 的符号修饰成 _Z6memsetPvii，这样链接器就无法与 C 语言中的 memset 符号进行链接。可以使用 C++ 宏 `__cplusplus` 解决这个问题，C++ 编译器会在编译 C++ 程序的时候默认定义这个宏：
+>>>>>>> 766de4975acea3b1635e00e329f6d7ede1f7690e
 
 ```cpp
 #ifdef __cplusplus
@@ -171,7 +177,7 @@ void *memset(void *, int, size_t);
 2. 一个强符号，多个弱符号，选强符号
 
 3. 都是弱符号，选占用空间最大的
-- 强引用：找不到对外部目标文件的符号引用的定义，链接器报符号为定义错误
+- 强引用：找不到对外部目标文件的符号引用的定义，链接器报符号未定义错误
 
 - 弱引用：链接器并不会报错，但是运行时调用该引用会出错
 
